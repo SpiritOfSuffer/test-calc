@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Form extends Component {
     state = {
-        productName: "",
-        productPrice: ""
+        productName: '',
+        productPrice: ''
     };
 
     handleProductNameChange = event => {
@@ -11,7 +11,7 @@ class Form extends Component {
     };
 
     handleProductPriceChange = event => {
-        const productPrice = (event.target.validity.valid) ? event.target.value : this.state.productPrice;
+        const productPrice = (event.target.validity.valid || event.target.value === "" || event.target.value == null) ? event.target.value : this.state.productPrice;
         this.setState({ productPrice });
         console.log(this.state.productPrice);
     };
