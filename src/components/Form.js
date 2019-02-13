@@ -30,8 +30,7 @@ class Form extends Component {
           return (
             <form onSubmit={this.onSubmitHandle}>
             <label htmlFor="title-field">
-              Продукт:
-              <textarea
+              Продукт: <input
                 value={this.state.productName}
                 onChange={this.handleProductNameChange}
                 id="title-field"
@@ -44,8 +43,7 @@ class Form extends Component {
             </label>
     
             <label htmlFor="description-field">
-              Цена:
-              <input 
+              Цена: <input 
                 type="text"
                 pattern="[0-9]*"
                 onChange={this.handleProductPriceChange.bind(this)}
