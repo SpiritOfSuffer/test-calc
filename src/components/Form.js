@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
 
 class Form extends Component {
     state = {
@@ -29,8 +30,8 @@ class Form extends Component {
       render() {
           return (
             <form onSubmit={this.onSubmitHandle}>
-            <label htmlFor="title-field">
-              Продукт: <input
+            <Label htmlFor="title-field">
+              Продукт: <Input
                 value={this.state.productName}
                 onChange={this.handleProductNameChange}
                 id="title-field"
@@ -40,10 +41,10 @@ class Form extends Component {
                 required
                 autoFocus
               />
-            </label>
+            </Label>
     
-            <label htmlFor="description-field">
-              Цена: <input 
+            <Label htmlFor="description-field">
+              Цена: <Input 
                 type="text"
                 pattern="[0-9]*"
                 onChange={this.handleProductPriceChange.bind(this)}
@@ -53,14 +54,47 @@ class Form extends Component {
                 placeholder="Цена товара"
                 required
               />
-            </label>
-              <button type="submit" value="submit">
+            </Label>
+              <Button type="submit" value="submit">
                 Добавить
-              </button>
+              </Button>
           </form>
         );
     }
     
 }
+
+const Input = styled.input`
+  border: 1px solid #bebebe;
+  border-radius: 2px;
+  padding: 16px 0px 10px 20px;
+  margin: 20px 0 20px 0;
+  font-family: inherit;
+  resize: none;
+  word-break: break-all;
+`;
+
+const Label = styled.label`
+  margin-left: 10px;
+`;
+
+const Button = styled.button`
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  border-radius: 8px;
+  font-family: inherit;
+  color: #ffffff;
+  padding: 10px 20px 24px 20px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  font: inherit;
+  margin-left: 20px;
+  &:hover {
+    background: #3cb0fd;
+    text-decoration: none;
+  }
+`;
+
+
 
 export default Form;

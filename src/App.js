@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Form from './components/Form';
 import Cart from './components/Cart';
+import styled from 'styled-components'
 
 class App extends Component {
   state = {
@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Добавить продукт</h1>
+        <Title>Добавить продукт</Title>
         <Form 
           updateDataWithNewItem={this.updateDataWithNewItem}
           data={this.state}
@@ -33,5 +33,12 @@ class App extends Component {
     );
   }
 }
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: grey;
+`;
+
 
 export default App;

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
+import '../App.css';
 
 class Cart extends Component {
 
@@ -48,12 +50,11 @@ class Cart extends Component {
        
       const p = this.getPrices(toArrayOfObjects); 
       const renderArrayOfObjects = toArrayOfObjects.map((item, key) => (
-       
+        
         <tr key={`test-${key}`}>
           <td>{item.productNames}</td>
           <td>{item.productPrices}</td>
           <td>
-            {console.log(p)}
             {item.productPrices.props.children - Math.round(item.productPrices.props.children * this.state.productDiscount / p)}
           </td>
         </tr>
@@ -61,13 +62,14 @@ class Cart extends Component {
         return (
           
           <section>
-            <h1>Корзина</h1>
-            <table>
-              <tr>
+            <Title>Корзина</Title>
+            <table  align="center">
+              <td>
                 <th>Продукт</th>
                 <th>Цена</th>
                 <th>Цена со скидкой</th>  
-              </tr>
+              </td>
+                
                 {renderArrayOfObjects}
               </table>
               <p>Скидка <input
@@ -84,5 +86,11 @@ class Cart extends Component {
       );
   }
 }
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: grey;
+`;
 
 export default Cart;
