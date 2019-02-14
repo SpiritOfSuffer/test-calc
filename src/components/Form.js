@@ -34,7 +34,6 @@ class Form extends Component {
               Продукт: <Input
                 value={this.state.productName}
                 onChange={this.handleProductNameChange}
-                id="title-field"
                 name="productName"
                 placeholder="Например, «Ноутбук»"
                 maxLength="100"
@@ -49,7 +48,6 @@ class Form extends Component {
                 pattern="[0-9]*"
                 onChange={this.handleProductPriceChange.bind(this)}
                 value={this.state.productPrice}
-                id="description-field"
                 name="productPrice"
                 placeholder="Цена товара"
                 required

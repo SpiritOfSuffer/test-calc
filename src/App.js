@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Form from './components/Form';
 import Cart from './components/Cart';
 import styled from 'styled-components'
@@ -19,17 +18,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <Div>
         <Title>Добавить продукт</Title>
         <Form 
           updateDataWithNewItem={this.updateDataWithNewItem}
           data={this.state}
           />
-          <hr/>
+          <Hr/>
         <Cart
           data={this.state}
         />
-      </div>
+      </Div>
     );
   }
 }
@@ -40,5 +39,12 @@ const Title = styled.h1`
   color: grey;
 `;
 
+const Hr = styled.hr`
+  width: 600px;
+`;
+
+const Div = styled.div`
+  text-align: center;
+`;
 
 export default App;
